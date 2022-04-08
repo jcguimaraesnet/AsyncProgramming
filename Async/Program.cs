@@ -19,9 +19,15 @@ namespace Async
             var task2 = Operacao2(); //1 ns -> start task
             var task3 = Operacao3(); //1 ns -> start task
 
+            //não existe dependência entre os três métodos,
+            //portanto o compilador executará assincronamente
+            //três métodos 'paralelamente'.
             await task1; //2 seconds
             await task2; //1 seconds
             await task3; //0 seconds
+
+            //o trecho acima equivale ao código abaixo
+            //await Task.WhenAll(task1, task2, task3);
 
             cronometro.Stop();
             Console.WriteLine($"Finalizando aplicação em {cronometro.ElapsedMilliseconds}");
