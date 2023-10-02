@@ -19,17 +19,18 @@ namespace EAP
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Antes - Chamada download síncrona");
+            cronometro.Start();
+
+            Console.WriteLine($"Antes - Chamada método assíncrono com padrão EAP em: {cronometro.ElapsedMilliseconds}");
             WebClient webClient1 = new(), webClient2 = new();
             
             webClient1.DownloadStringCompleted += OnDownloadStringCompleted;
             webClient2.DownloadStringCompleted += OnDownloadStringCompleted;
-
-            cronometro.Start();
             
             webClient1.DownloadStringAsync(new Uri($"http://www.{webSiteLista.First().Key}.com.br"), webSiteLista.First().Key);
             webClient2.DownloadStringAsync(new Uri($"http://www.{webSiteLista.Last().Key}.com.br"), webSiteLista.Last().Key);
 
+            Console.WriteLine($"Após - Chamada método assíncrono com padrão EAP em: {cronometro.ElapsedMilliseconds}");
 
             while (webClient1.IsBusy || webClient2.IsBusy)
             {

@@ -20,10 +20,10 @@ namespace APM
         {
             cronometro.Start();
 
-            Console.WriteLine("Antes - Chamada método assíncrono com padrão APM");
+            Console.WriteLine($"Antes - Chamada método assíncrono com padrão APM em: {cronometro.ElapsedMilliseconds}");
             Dns.BeginGetHostAddresses($"www.{webSiteLista.First().Key}.com.br", EndGetIP, webSiteLista.First().Key);
             Dns.BeginGetHostAddresses($"www.{webSiteLista.Last().Key}.com.br", EndGetIP, webSiteLista.Last().Key);
-            Console.WriteLine("Após - Chamada método assíncrono com padrão APM");
+            Console.WriteLine($"Após - Chamada método assíncrono com padrão APM em: {cronometro.ElapsedMilliseconds}");
             
             Console.ReadKey();
         }

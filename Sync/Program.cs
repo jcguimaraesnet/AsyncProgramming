@@ -25,19 +25,19 @@ namespace Sync
         static void Operacao1()
         {
             Thread.Sleep(2000);
-            Console.WriteLine("Operacao 1");
+            Console.WriteLine("Sync - Operacao 1");
         }
 
         static void Operacao2()
         {
             Thread.Sleep(3000);
-            Console.WriteLine("Operacao 2");
+            Console.WriteLine("Sync - Operacao 2");
         }
 
         static void Operacao3()
         {
             Thread.Sleep(1000);
-            Console.WriteLine("Operacao 3");
+            Console.WriteLine("Sync - Operacao 3");
         }
     }
 }

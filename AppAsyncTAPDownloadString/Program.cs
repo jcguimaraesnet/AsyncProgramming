@@ -17,21 +17,23 @@ namespace AppAsyncTAPDownloadString
 
             cronometro.Start();
 
+            Console.WriteLine($"Antes - Chamada método assíncrono com padrão TAP em: {cronometro.ElapsedMilliseconds}");
+
             Task<string> firstTask = webClient1.DownloadStringTaskAsync(webSiteLista.First());
             Task<string> lastTask = webClient2.DownloadStringTaskAsync(webSiteLista.Last());
 
-            //var arrayString = await Task.WhenAll(firstTask, lastTask);
-            //var taskString = await Task.WhenAny(firstTask, lastTask);
+            Console.WriteLine($"Após - Chamada método assíncrono com padrão TAP em: {cronometro.ElapsedMilliseconds}");
 
-            string stringPageFirst = await firstTask;
-            Console.WriteLine($"download website {webSiteLista.First()} com {stringPageFirst.Length} bytes, finalizado em {cronometro.ElapsedMilliseconds} ms");
+            Console.WriteLine($"ANTES Task.WhenAll em: {cronometro.ElapsedMilliseconds}");
+            var arrayString = await Task.WhenAll(firstTask, lastTask);
+            Console.WriteLine($"APOS Task.WhenAll em: {cronometro.ElapsedMilliseconds}");
 
-            string stringPageLast = await lastTask;
-            Console.WriteLine($"download website {webSiteLista.Last()} com {stringPageLast.Length} bytes, finalizado em {cronometro.ElapsedMilliseconds} ms");
+            Console.WriteLine($"download website {webSiteLista.First()} com {arrayString.First().Length} bytes, finalizado em {cronometro.ElapsedMilliseconds} ms");
+            Console.WriteLine($"download website {webSiteLista.Last()} com {arrayString.Last().Length} bytes, finalizado em {cronometro.ElapsedMilliseconds} ms");
 
             cronometro.Stop();
 
-            var indexWebSiteMaisPesado = (stringPageFirst.Length < stringPageLast.Length) ? 1 : 0;
+            var indexWebSiteMaisPesado = (arrayString.First().Length < arrayString.Last().Length) ? 1 : 0;
 
             Console.WriteLine($"Website mais pesado: {webSiteLista[indexWebSiteMaisPesado]}");
 
