@@ -39,7 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Async", "2 - Async", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSyncDownloadString", "AppSyncDownloadString\AppSyncDownloadString.csproj", "{CE0AAA0E-0F15-48A0-96F1-5169DF675331}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Sync e Async - Real Sample", "2. Sync e Async - Real Sample", "{43A21B6E-3261-466C-8CF6-50C6AAAC7624}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Sync e Async - Real Sample", "2 - Sync e Async - Real Sample", "{43A21B6E-3261-466C-8CF6-50C6AAAC7624}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Sync", "1 - Sync", "{2438C969-BF5B-48D7-8610-275250787E69}"
 EndProject
@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Async - TAP - Task-base
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppAsyncTAPDownloadString", "AppAsyncTAPDownloadString\AppAsyncTAPDownloadString.csproj", "{5CD6CB8B-904F-48CB-A692-734CEB912F1A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Async Advanced", "3. Async Advanced", "{F4EDF9EF-947E-41C3-878C-A1016DDCAF02}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Async Advanced", "3 - Async Advanced", "{F4EDF9EF-947E-41C3-878C-A1016DDCAF02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
