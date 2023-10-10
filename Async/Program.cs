@@ -15,14 +15,11 @@ namespace Async
 
             Console.WriteLine($"Iniciando aplicação em {cronometro.ElapsedMilliseconds}");
 
-            var task1 = Operacao1(); //1 ns -> start task
-            var task2 = Operacao2(); //1 ns -> start task
-            var task3 = Operacao3(); //1 ns -> start task
-            await task1;
-            await task2;
-            await task3;
+            await Operacao1(); //1 ns -> start task
+            await Operacao2(); //1 ns -> start task
+            await Operacao3(); //1 ns -> start task
 
-            //o trecho acima equivale ao método abaixo Task.WhenAll
+            //outra possibilidade
             //await Task.WhenAll(Operacao1(), Operacao2(), Operacao3());
 
             cronometro.Stop();
